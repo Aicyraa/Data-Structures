@@ -1,47 +1,33 @@
 import Node from './node.js'
 
 export default class LinkedList {
-   // storage for nodes
-   head = null
-   tail = null
+   constructor() {
+      this.head = null
+   }
 
    prepend(value) {
       const newNode = new Node(value)
+      var nextNode = null
 
-      // initial set: when there is no head or tail 
-      if (this.head === null && this.tail === null) {
+      if (this.head === null) {
+         // initial set: when there is no head
          this.head = newNode
-         this.tail = newNode
       } else {
-         // ONLY WORKS FOR 2 NODES
-         this.tail = this.head
-         this.head = newNode // set the new node as the head
-         this.head.neighbor = this.tail // set the new head "neighbor" to the previous head
+         // set the previous head to "nextNode" ->
+         // set the "newNode" to the head ->
+         // set the "nextNode" to be the neighbor of the head
+         nextNode = this.head
+         this.head = newNode
+         this.head.neighbor = nextNode
       }
    }
 
-   // goal: append a new node, print the nodes
-    
+   
+
    toString() {
+      var current = this.head
+      var output = ''
 
-      const node1 = {
-         data: "dog",
-         neighbor: node2 
-      }
-
-      const node2 = {
-         data: "cat",
-         neighbor: node3 
-      }
-
-      const node3 = {
-         data: "bird",
-         neighbor: null
-      }
-
-      let current = node1
-      let output = ''
-      
       while (true) {
          if (current) {
             output += `( ${current.data} ) -> `
@@ -54,5 +40,4 @@ export default class LinkedList {
 
       return output
    }
-
 }
