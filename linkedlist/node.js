@@ -6,10 +6,14 @@ export default class Node {
       this.#neighbor = neighbor || null;
    }
 
-   set value(value) {
-      this.#data = value
+   get data() {
+      return this.#data
    }
 
+   get neighbor() {
+      return this.#neighbor
+   }
+   
    set neighbor(value) {
       this.#neighbor = value 
    }
