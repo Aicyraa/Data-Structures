@@ -1,6 +1,18 @@
 import Node from './node.js'
 
 export default class LinkedList {
+   
+   #traverse(callback) {
+      var node = this.currentHead
+      while (node) {
+         const result = callback(node)
+         if (result !== undefined) return result
+         node = node.neighbor
+      }
+
+      return undefined
+   }
+
    constructor() {
       this.currentHead = null
    }
@@ -30,41 +42,16 @@ export default class LinkedList {
    }
 
    size() {
-      var currentNode = this.currentHead
-      var size = 0
-
-      if (!this.currentHead) return size
-
-      while (true) {
-         if (currentNode.neighbor) {
-            currentNode = currentNode.neighbor
-            ++size
-            continue
-         } else {
-            ++size
-            break
-         }
-      }
-
-      return size
-   }
+      let count = 0
+      this.#traverse(() => { count++ })
+      return count
+    }
 
    at(index) {
-      var currentNode = this.currentHead
-      var currentIndex = 0
-
-      while (true) {
-         if (currentNode.neighbor === null) {
-            return undefined
-         }
-
-         if (index === currentIndex) {
-            return currentNode.data
-         }
-
-         currentNode = currentNode.neighbor
-         currentIndex++
-      }
+      let i = 0
+      return this.#traverse(node => {
+         if (i++ === index) return node.data
+      })
    }
 
    pop() {
@@ -74,31 +61,21 @@ export default class LinkedList {
    }
 
    contains(value) {
-      var currentNode = this.currentHead
-      while (true) {
-         if (currentNode.data === value) {
-            return true
-         } else if (currentNode.data !== value && currentNode.neighbor === null) {
-            return false
-         } else {
-            currentNode = currentNode.neighbor
-         }
-      }
+      return (
+         this.#traverse(node => {
+            if (node.data === value) return true
+         }) ?? false
+      )
    }
 
-   indexof(value) {
-      var currentNode = this.currentHead
-      var index = 0
-      while (true) {
-         if (currentNode.data === value) {
-            return index
-         } else if (currentNode.data !== value && currentNode.neighbor === null) {
-            return -1
-         } else {
+   indexOf(value) {
+      let index = 0
+      return (
+         this.#traverse(node => {
+            if (node.data === value) return index
             index++
-            currentNode = currentNode.neighbor
-         }
-      }
+         }) ?? -1
+      )
    }
 
    insertAt(index, ...values) {
@@ -153,16 +130,11 @@ export default class LinkedList {
    }
 
    get tail() {
-      var currentNode = this.currentHead
-      while (true) {
-         if (currentNode.neighbor) {
-            currentNode = currentNode.neighbor
-            continue
-         } else {
-            return currentNode.data
-         }
-      }
-   }
+      return this.#traverse(node => {
+        if (!node.neighbor) return node.data
+      })
+    }
+    
 
    toString() {
       var current = this.currentHead
