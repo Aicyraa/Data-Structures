@@ -17,8 +17,8 @@ console.log(list.pop());
 console.log(list.toString());
 console.log(list.contains("Dog"));
 console.log(list.contains("Tiger"));
-console.log(list.indexof("Dog"));
-console.log(list.indexof("Tiger"));
+console.log(list.indexOf("Dog"));
+console.log(list.indexOf("Tiger"));
 list.insertAt(2, "Ganurn", "Ganyarn");
 console.log(list.toString());
 
