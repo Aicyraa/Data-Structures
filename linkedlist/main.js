@@ -5,9 +5,16 @@ list.prepend("Dog")
 list.prepend("Cat")
 list.prepend("Bird")
 list.prepend("Lion")
-// list.append("Aali")
+list.append("Monkey")
 
 console.log(list.toString());
 console.log(list.size());
+console.log(list.head);
+console.log(list.tail);
+console.log(list.at(3));
+console.log(list.at(5));
+console.log(list.pop());
+console.log(list.toString());
+
 
 
