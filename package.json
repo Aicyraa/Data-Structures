@@ -4,7 +4,12 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,12 @@
   },
   "homepage": "https://github.com/Aicyraa/Data-Structures#readme",
   "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "babel-jest": "^30.3.0",
     "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "jest": "^30.3.0"
   }
 }
