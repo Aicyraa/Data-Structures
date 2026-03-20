@@ -4,10 +4,10 @@ A collection of data structure implementations in JavaScript, organized for easy
 
 ## Implementations
 
-| Data Structure | Folder | Status |
-|---|---|---|
-| Linked List | [linkedlist/](./linkedlist/README.md) | ✅ Done |
-| Hash Table | [hashTable/](./hashTable/) | 🚧 Coming soon |
+| Data Structure | Folder 
+|---|---|
+| Linked List | [linkedlist/](./linkedlist/README.md) |
+| Hash Table | [hashTable/](./hashTable/) | 
 
 ## Linked List
 
@@ -25,14 +25,4 @@ A data structure that maps keys to values using a hash function for fast lookups
 
 → [View implementation & docs](./hashTable/) *(coming soon)*
 
----
 
-## Running Tests
-
-```bash
-npm test
-```
-
-## License
-
-MIT
