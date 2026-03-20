@@ -19,6 +19,11 @@ console.log(list.contains("Dog"));
 console.log(list.contains("Tiger"));
 console.log(list.indexof("Dog"));
 console.log(list.indexof("Tiger"));
+list.insertAt(2, "Ganurn", "Ganyarn");
+console.log(list.toString());
+
+list.removeAt(2);
+console.log(list.toString());
 
 
 

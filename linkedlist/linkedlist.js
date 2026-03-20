@@ -101,6 +101,52 @@ export default class LinkedList {
       }
    }
 
+   insertAt(index, ...values) {
+      function insert(index, value) {
+         var newNode = new Node(value)
+         var currNode = this.currentHead
+         var currIndex = 0
+
+         while (true) {
+            if (currIndex === index) {
+               var nextNode = currNode.neighbor
+               currNode.neighbor = newNode
+               newNode.neighbor = nextNode
+               break
+            }
+
+            currNode = currNode.neighbor
+            currIndex++
+         }
+      }
+
+      insert = insert.bind(this)
+
+      for (const value of values) {
+         insert(index++, value)
+      }
+   }
+
+   removeAt(index) {
+      if (index === 0) {
+         this.currentHead = this.currentHead.neighbor
+         return
+      }
+
+      var currNode = this.currentHead
+      var currIndex = 0
+
+      while (currNode.neighbor) {
+         if (currIndex === index - 1) {
+            currNode.neighbor = currNode.neighbor.neighbor
+            return
+         }
+
+         currNode = currNode.neighbor
+         currIndex++
+      }
+   }
+
    get head() {
       var currentHead = this.currentHead
       return currentHead.data
