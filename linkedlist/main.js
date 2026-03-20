@@ -15,6 +15,10 @@ console.log(list.at(3));
 console.log(list.at(5));
 console.log(list.pop());
 console.log(list.toString());
+console.log(list.contains("Dog"));
+console.log(list.contains("Tiger"));
+console.log(list.indexof("Dog"));
+console.log(list.indexof("Tiger"));
 
 
 

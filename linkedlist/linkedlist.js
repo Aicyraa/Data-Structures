@@ -52,17 +52,15 @@ export default class LinkedList {
    at(index) {
       var currentNode = this.currentHead
       var currentIndex = 0
-      // ( Lion ) -> ( Bird ) -> ( Cat ) -> ( Dog ) -> ( Monkey ) -> null
-      // 2
+
       while (true) {
-         
          if (currentNode.neighbor === null) {
             return undefined
          }
-         
+
          if (index === currentIndex) {
             return currentNode.data
-         } 
+         }
 
          currentNode = currentNode.neighbor
          currentIndex++
@@ -73,6 +71,34 @@ export default class LinkedList {
       var prevHeadData = this.currentHead.data
       this.currentHead = this.currentHead.neighbor
       return prevHeadData
+   }
+
+   contains(value) {
+      var currentNode = this.currentHead
+      while (true) {
+         if (currentNode.data === value) {
+            return true
+         } else if (currentNode.data !== value && currentNode.neighbor === null) {
+            return false
+         } else {
+            currentNode = currentNode.neighbor
+         }
+      }
+   }
+
+   indexof(value) {
+      var currentNode = this.currentHead
+      var index = 0
+      while (true) {
+         if (currentNode.data === value) {
+            return index
+         } else if (currentNode.data !== value && currentNode.neighbor === null) {
+            return -1
+         } else {
+            index++
+            currentNode = currentNode.neighbor
+         }
+      }
    }
 
    get head() {
