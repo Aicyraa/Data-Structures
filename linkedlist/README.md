@@ -1,7 +1,13 @@
 # Data Structures — Linked List
 
-<!-- IMAGE: Replace the line below with your diagram, e.g.: ![Linked List Diagram](./assets/linkedlist-diagram.png) -->
-![Linked List Diagram](./assets/YOUR_IMAGE_HERE.png)
+![Linked List Diagram](../LLdrawio.png)
+
+<center>
+Images from geeks for geeks 
+
+[Reference](https://www.geeksforgeeks.org/dsa/advantages-and-disadvantages-of-linked-list/) 
+
+</center>
 
 ## Overview
 
@@ -15,7 +21,7 @@ Each node is an instance of `Node`, which stores:
 - `data` — the value held by the node
 - `neighbor` — a reference to the next node (`null` if last)
 
----
+
 
 ## Project Structure
 
@@ -27,9 +33,7 @@ linkedlist/
 └── main.js              # Usage examples
 ```
 
----
-
-## API Reference
+## Reference
 
 ### `prepend(value)`
 Inserts a new node at the **head** of the list.
@@ -39,16 +43,12 @@ list.prepend('Dog')   // ( Dog ) -> null
 list.prepend('Cat')   // ( Cat ) -> ( Dog ) -> null
 ```
 
----
-
 ### `append(value)`
 Inserts a new node at the **tail** of the list.
 
 ```js
 list.append('Lion')   // ( Cat ) -> ( Dog ) -> ( Lion ) -> null
 ```
-
----
 
 ### `size()`
 Returns the total number of nodes.
@@ -57,8 +57,6 @@ Returns the total number of nodes.
 list.size()   // 3
 ```
 
----
-
 ### `head`
 Returns the data of the **first** node.
 
@@ -66,16 +64,12 @@ Returns the data of the **first** node.
 list.head   // 'Cat'
 ```
 
----
-
 ### `tail`
 Returns the data of the **last** node.
 
 ```js
 list.tail   // 'Lion'
 ```
-
----
 
 ### `at(index)`
 Returns the value at the given index. Returns `undefined` if out of bounds.
@@ -85,16 +79,12 @@ list.at(0)   // 'Cat'
 list.at(99)  // undefined
 ```
 
----
-
 ### `pop()`
 Removes and returns the **head** node's data.
 
 ```js
 list.pop()   // 'Cat'
 ```
-
----
 
 ### `contains(value)`
 Returns `true` if the value exists in the list, `false` otherwise.
@@ -104,8 +94,6 @@ list.contains('Dog')    // true
 list.contains('Tiger')  // false
 ```
 
----
-
 ### `indexof(value)`
 Returns the index of the first node with the given value, or `-1` if not found.
 
@@ -113,8 +101,6 @@ Returns the index of the first node with the given value, or `-1` if not found.
 list.indexof('Dog')    // 1
 list.indexof('Tiger')  // -1
 ```
-
----
 
 ### `insertAt(index, ...values)`
 Inserts one or more values starting at the given index.
@@ -124,9 +110,7 @@ list.insertAt(1, 'Parrot')
 // ( Cat ) -> ( Parrot ) -> ( Dog ) -> ( Lion ) -> null
 ```
 
----
-
-### `removeAt(index)`
+###d `removeAt(index)`
 Removes the node at the given index.
 
 ```js
@@ -144,8 +128,4 @@ npm test
 
 Tests are written with [Jest](https://jestjs.io/) and cover all methods including edge cases.
 
----
 
-## License
-
-MIT
