@@ -1,0 +1,24 @@
+{
+  "name": "data-structures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aicyraa/Data-Structures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aicyraa/Data-Structures/issues"
+  },
+  "homepage": "https://github.com/Aicyraa/Data-Structures#readme",
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}
