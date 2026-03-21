@@ -110,7 +110,7 @@ list.insertAt(1, 'Parrot')
 // ( Cat ) -> ( Parrot ) -> ( Dog ) -> ( Lion ) -> null
 ```
 
-###d `removeAt(index)`
+### `removeAt(index)`
 Removes the node at the given index.
 
 ```js
