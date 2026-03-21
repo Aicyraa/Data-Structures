@@ -14,21 +14,13 @@ export default class HashMap {
       return hashCode
    }
 
-   #resize() {
-      // check if entries is greater than cap * load
-      // create a copy of the old bucket
-
-      
-   }
-
    set(key, value) {
       const entries = this.#buckets.filter(bucket => bucket !== null)
-      const loadChecker = this.#capacity * this.#load_factor 
-      console.log(loadChecker <= entries.length, entries.length);
-      
+      const loadChecker = this.#capacity * this.#load_factor
+
+      // if entries is > loadChecker then more collision will occur
       if (loadChecker <= entries.length) {
-         console.log('Higher Risk Of Collision');
-         
+         // increases buckets size
          const oldBuckets = this.#buckets
          const newBuckets = Array(this.#capacity).fill(null)
          this.#buckets = [...oldBuckets, ...newBuckets]
@@ -38,7 +30,42 @@ export default class HashMap {
       this.#buckets[this.#hash(key)] = { key, value }
    }
 
-   toString() {
-      return this.#buckets
+   get(key) {
+      return this.#buckets[this.#hash(key)]
    }
+
+   has(key) {
+      return this.#buckets[this.#hash(key)] !== null ? true : false
+   }
+
+   remove(key) {
+      const buckIdx = this.#hash(key)
+      if (buckIdx > this.#capacity || this.#buckets[buckIdx] === null) {
+         return false
+      } else{
+         this.#buckets[buckIdx] = null
+         return true 
+      }
+   }
+
+   size() {
+      return this.#buckets.filter(bucket => bucket !== null).length
+   }
+
+   clear() {
+      this.#buckets.fill(null)
+   }
+
+   keys() {
+      return this.#buckets.filter(bucket => bucket !== null).map(bucket => bucket.key)
+   }
+
+   values() {
+      return this.#buckets.filter(bucket => bucket !== null).map(bucket => bucket.value)
+   }
+
+   entries() {
+      return this.#buckets.filter(bucket => bucket !== null).map(({key, value}) => [key, value])
+   }
+
 }

@@ -1,6 +1,7 @@
 import HashMap from "./hashTable.js";
 
 const hashMap = new HashMap()
+
 hashMap.set('apple', 'red')
 hashMap.set('banana', 'yellow')
 hashMap.set('carrot', 'orange')
@@ -13,8 +14,15 @@ hashMap.set('ice cream', 'white')
 hashMap.set('jacket', 'blue')
 hashMap.set('kite', 'pink')
 hashMap.set('lion', 'golden')
-hashMap.set('King', 'Julien')
-hashMap.set('Pheasant', 'Morty')
-hashMap.set('Alice', 'Wanderland')
 
-console.log(hashMap.toString());
+console.log("Keys");
+console.log(hashMap.keys());
+console.log("Entries");
+console.log(hashMap.entries());
+console.log("Values");
+console.log(hashMap.values());
+console.log(hashMap.size());
+
+
+
+[]
