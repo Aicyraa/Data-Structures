@@ -1,30 +1,107 @@
 # Data Structures
 
-A collection of data structure implementations in JavaScript, organized for easy understanding and use.
+A collection of fundamental data structures implemented in JavaScript, designed for learning and reference.
 
-## Implementations
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow.svg)
+![Node.js](https://img.shields.io/badge/node-%3E%3D14-green.svg)
 
-| Data Structure | Folder |
-|---|---|
-| Linked List | [linkedlist/](./linkedlist/README.md) |
-| Hash Table | [hashTable/](./hashTable/README.md) |
+## Table of Contents
 
-## Linked List
+- [Overview](#overview)
+- [Data Structures](#data-structures)
+- [Installation](#installation)
+- [Testing](#testing)
+- [Usage](#usage)
 
-A linear data structure where each node holds a value and a reference to the next node.
+## Overview
 
+This repository contains implementations of classic computer science data structures. Each data structure is self-contained with its own documentation and test suite.
+
+## Data Structures
+
+| Data Structure | Description | Time Complexity | Space Complexity |
+|----------------|-------------|-----------------|------------------|
+| [Hash Table](hashTable/) | Maps keys to values using hash function | O(1) avg lookup | O(n) |
+| [Linked List](linkedList/) | Linear structure with node references | O(n) lookup | O(n) |
+| [Binary Search Tree](binary-search/) | Self-balancing BST with ordered storage | O(log n) avg | O(log n) |
+
+### Quick Links
+
+- **[Hash Table](hashTable/)** - O(1) average-time key-value mapping with chaining
+- **[Linked List](linkedList/)** - Singly linked list with full CRUD operations
+- **[Binary Search Tree](binary-search/)** - Balanced BST with insert, delete, search, and visualization
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+cd Data-Structures
+npm install
 ```
-( Bird ) -> ( Cat ) -> ( Dog ) -> null
+
+## Testing
+
+Run the test suite using Jest:
+
+```bash
+npm test
 ```
 
-→ [View implementation & docs](./linkedlist/README.md)
+Run tests for a specific data structure:
 
-## Hash Table
-
-A data structure that maps keys to values using a hash function for fast lookups.
-
-```
-{ 'apple' -> 'red', 'banana' -> 'yellow', ... }
+```bash
+npm test -- hashTable
+npm test -- linkedList
+npm test -- binary-search
 ```
 
-→ [View implementation & docs](./hashTable/README.md)
+## Usage
+
+### Hash Table
+
+```javascript
+const HashMap = require('./hashTable/hashTable')
+
+const map = new HashMap()
+map.set('apple', 'red')
+map.set('banana', 'yellow')
+
+console.log(map.get('apple'))    // { key: 'apple', value: 'red' }
+console.log(map.has('banana'))   // true
+console.log(map.size())          // 2
+```
+
+### Linked List
+
+```javascript
+const LinkedList = require('./linkedList/linkedList')
+
+const list = new LinkedList()
+list.append('Bird')
+list.append('Cat')
+list.append('Dog')
+
+console.log(list.size())      // 3
+console.log(list.head)        // 'Bird'
+console.log(list.contains('Cat'))  // true
+```
+
+### Binary Search Tree
+
+```javascript
+const Tree = require('./binary-search/tree')
+
+const bst = new Tree()
+bst.root = [8, 3, 10, 1, 6, 14, 4, 7, 13]
+
+console.log(bst.includes(6))   // true
+bst.insert(5)
+bst.deleteItem(3)
+bst.prettyPrint()              // Visual tree output
+```
+
+---
+
+Built with ❤️ for learning and education
