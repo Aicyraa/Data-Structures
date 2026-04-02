@@ -26,11 +26,6 @@ This repository contains implementations of classic computer science data struct
 | [Linked List](linkedList/) | Linear structure with node references | O(n) lookup | O(n) |
 | [Binary Search Tree](binary-search/) | Self-balancing BST with ordered storage | O(log n) avg | O(log n) |
 
-### Quick Links
-
-- **[Hash Table](hashTable/)** - O(1) average-time key-value mapping with chaining
-- **[Linked List](linkedList/)** - Singly linked list with full CRUD operations
-- **[Binary Search Tree](binary-search/)** - Balanced BST with insert, delete, search, and visualization
 
 ## Installation
 
